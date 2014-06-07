@@ -1,10 +1,13 @@
-/**
-* Created with sandbox1.
-* User: learnNode
-* Date: 2014-06-07
-* Time: 03:27 PM
-* To change this template use Tools | Templates.
-*/
-define(function() {
-return {};
+define(['text!templates/index.html'], function(indexTemplate) {
+    var indexView = Backbone.View.extend({
+        el: $('#content'),
+        
+        render: function() {
+            
+            this.$el.html(indexTemplate);
+        }
+        
+        });
+
+    return new indexView;
 });

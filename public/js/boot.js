@@ -1,10 +1,18 @@
-/**
-* Created with sandbox1.
-* User: learnNode
-* Date: 2014-06-07
-* Time: 03:25 PM
-* To change this template use Tools | Templates.
-*/
-define(function() {
-return {};
+require.config({
+    paths: {
+        jQuery: '/js/libs/jquery',
+        Underscore: '/js/libs/underscore',
+        Backbone: '/js/libs/backbone',
+        text: '/js/libs/text',
+        templates: '../templates'
+        },
+
+    shim: {
+        'Backbone': ['Underscore', 'jQuery'],
+        'SocialNet': ['Backbone']
+        }
+});
+
+require(['SocialNet'], function(SocialNet) {
+    SocialNet.initialize();
 });
